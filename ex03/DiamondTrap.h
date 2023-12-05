@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ScavTrap.h                                         :+:    :+:            */
+/*   DiamondTrap.h                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: laura <laura@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/12/04 11:47:11 by laura         #+#    #+#                 */
-/*   Updated: 2023/12/04 11:47:11 by laura         ########   odam.nl         */
+/*   Created: 2023/12/04 15:37:30 by laura         #+#    #+#                 */
+/*   Updated: 2023/12/04 15:37:30 by laura         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CPP03_FRAGTRAP_H
-#define CPP03_FRAGTRAP_H
+#ifndef CPP03_DIAMONDTRAP_H
+#define CPP03_DIAMONDTRAP_H
 
-#include "ClapTrap.h"
+#include "FragTrap.h"
+#include "ScavTrap.h"
 
-class FragTrap : public ClapTrap {
+class DiamondTrap : public FragTrap, public ScavTrap {
 private:
-
+	std::string m_name;
 public:
-	explicit FragTrap(std::string new_name);
-	~FragTrap();
-	FragTrap(FragTrap &cp) = default;
-	FragTrap &operator=(const FragTrap &cp);
-	void highFivesGuys();
+	DiamondTrap(std::string new_name);
+	~DiamondTrap();
+	DiamondTrap(DiamondTrap& cp) = default;
+	DiamondTrap& operator=(const DiamondTrap& cp) = default;
+
 };
 
-#endif //CPP03_FRAGTRAP_H
+
+#endif //CPP03_DIAMONDTRAP_H

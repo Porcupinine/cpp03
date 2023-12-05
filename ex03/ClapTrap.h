@@ -42,5 +42,4 @@ class ClapTrap {
 		void setAttackDamage(size_t amount);
 };
 
-
 #endif //CPP03_CLAPTRAP_H

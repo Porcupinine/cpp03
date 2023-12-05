@@ -17,10 +17,10 @@
 
 class ClapTrap {
 	private:
-		std::string	name;
-		size_t		hitPoints{10};
-		int			energyPoints{10};
-		int			attackDamage{0};
+		std::string	m_name;
+		size_t		m_hitPoints{10};
+		int			m_energyPoints{10};
+		int			m_attackDamage{0};
 	public:
 		explicit ClapTrap(std::string new_name);
 		~ClapTrap();
