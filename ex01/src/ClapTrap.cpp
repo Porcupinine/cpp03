@@ -10,17 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.h"
+#include "../includes/ClapTrap.h"
 
 #include <iostream>
 #include <utility>
 
 ClapTrap::ClapTrap(std::string new_name) : m_name(std::move(new_name)) {
-	std::cout << m_name << " is ready!\n";
+	std::cout << "ClapTrap "<<m_name << " is ready!\n";
 }
 
 ClapTrap::~ClapTrap() {
-	std::cout << m_name << " is waste now!\n";
+	std::cout << "ClapTrap " <<m_name << " is waste now!\n";
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &cp) {
@@ -29,14 +29,14 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &cp) {
 
 void ClapTrap::attack(const std::string &target) {
 	if(m_energyPoints == 0) {
-		std::cout<<"No mana, no attack!\n";
+		std::cout<<"ClapTrap has no mana. No mana, no attack!\n";
 		return;
 	}
 	if(m_hitPoints == 0) {
-		std::cout<<"Zombies are on cpp02\n";
+		std::cout<<"ClapTrap is not a Zombie, for Zombies see cpp02\n";
 		return;
 	}
-	std::cout << m_name << " attacks " << target << " dealing " << m_attackDamage << " damage\n";
+	std::cout <<"ClapTrap "<< m_name << " attacks " << target << " with " << m_attackDamage << " damage\n";
 	m_energyPoints--;
 }
 
@@ -46,7 +46,7 @@ void ClapTrap::takeDamage(unsigned int amount) {
 		return;
 	}
 	if(amount > m_hitPoints) {
-		std::cout<<"You are a killer machine!\n";
+		std::cout<<"K.O!\n";
 		m_hitPoints = 0;
 		return;
 	}
@@ -100,20 +100,4 @@ size_t ClapTrap::getAttackDamage() const {
 
 void ClapTrap::printStatus() const {
 	std::cout << "Name: " << m_name << "\nHP: " << m_hitPoints << "\nMana: " << m_energyPoints << "\n";
-}
-
-void ClapTrap::setName(std::string new_name) {
-	m_name = std::move(new_name);
-}
-
-void ClapTrap::setHitPoints(size_t amount) {
-	m_hitPoints = amount;
-}
-
-void ClapTrap::setEnergyPoints(size_t amount) {
-	m_energyPoints = amount;
-}
-
-void ClapTrap::setAttackDamage(size_t amount) {
-	m_attackDamage = amount;
 }

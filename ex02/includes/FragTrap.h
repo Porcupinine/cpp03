@@ -15,15 +15,16 @@
 
 #include "ClapTrap.h"
 
-class FragTrap : virtual public ClapTrap {
-private:
+class FragTrap : public ClapTrap {
+	private:
 
-public:
-	explicit FragTrap(std::string new_name);
-	~FragTrap();
-	FragTrap(FragTrap &cp) = default;
-	FragTrap &operator=(const FragTrap &cp);
-	void highFivesGuys();
-};
+	public:
+		explicit FragTrap(std::string new_name);
+		~FragTrap();
+		FragTrap(FragTrap &cp) = default;
+		FragTrap &operator=(const FragTrap &cp);
+		void highFivesGuys();
+		void attack(const std::string &target);
+	};
 
 #endif //CPP03_FRAGTRAP_H

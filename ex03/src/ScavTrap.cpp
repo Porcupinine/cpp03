@@ -10,25 +10,42 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.h"
+#include "../includes/ScavTrap.h"
 #include <iostream>
 #include <utility>
 
-FragTrap::FragTrap(std::string new_name) : ClapTrap(std::move(new_name)) {
-	std::cout<<"FragTrap "<< getName() <<" is ready!\n";
-	setHitPoints(100);
-	setEnergyPoints(100);
-	setAttackDamage(30);
+ScavTrap::ScavTrap(std::string new_name) : ClapTrap(std::move(new_name)) {
+	std::cout<<"ScavTrap "<< getName() <<" is ready!\n";
+	m_hitPoints = 100;
+	m_energyPoints = 50;
+	m_attackDamage = 20;
 }
 
-FragTrap::~FragTrap() {
-	std::cout<<"FragTrap "<<getName()<<" is now waste!\n";
+ScavTrap::~ScavTrap() {
+	std::cout<<"ScavTrap "<<getName()<<" is now waste!\n";
 }
 
-FragTrap &FragTrap::operator=(const FragTrap &cp) {
+ScavTrap &ScavTrap::operator=(const ScavTrap &cp) {
 	return *this;
 }
 
-void FragTrap::highFivesGuys() {
-	std::cout<<"HI 5!!!\n";
+void ScavTrap::guardGate() {
+	if(m_hitPoints == 0) {
+		std::cout<<"Dead machines can't watch over anything!\n";
+		return;
+	}
+	std::cout<<getName()<<": YOU SHALL NOT PASS!!\n";
 }
+
+void ScavTrap::attack(const std::string &target) {
+	if(m_energyPoints == 0) {
+		std::cout<<"ScavTrap has no mana. No mana, no attack!\n";
+		return;
+	}
+	if(m_hitPoints == 0) {
+		std::cout<<"ScavTrap is not a Zombie, for Zombies see cpp02\n";
+		return;
+	}
+	std::cout <<"ScavTrap"<< m_name << " attacks " << target << " with " << m_attackDamage << " damage\n";
+	m_energyPoints--;}
+

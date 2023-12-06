@@ -13,9 +13,9 @@
 #ifndef CPP03_SCAVTRAP_H
 #define CPP03_SCAVTRAP_H
 
-#include "../ex02/ClapTrap.h"
+#include "ClapTrap.h"
 
-class ScavTrap : virtual public ClapTrap {
+class ScavTrap : public ClapTrap {
 	private:
 
 	public:
@@ -24,6 +24,7 @@ class ScavTrap : virtual public ClapTrap {
 		ScavTrap(ScavTrap& cp) = default;
 		ScavTrap& operator=(const ScavTrap& cp);
 		void guardGate();
+		void attack(const std::string& target);
 };
 
 

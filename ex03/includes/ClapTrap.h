@@ -16,17 +16,17 @@
 #include <string>
 
 class ClapTrap {
-	private:
+	protected:
 		std::string	m_name;
-		size_t		m_hitPoints{10};
-		size_t		m_energyPoints{10};
-		size_t 		m_attackDamage{0};
+		size_t		m_hitPoints;
+		size_t		m_energyPoints;
+		size_t 		m_attackDamage;
 	public:
 		explicit ClapTrap(std::string new_name);
 		~ClapTrap();
 		ClapTrap(ClapTrap& cp) = default;
 		ClapTrap& operator=(const ClapTrap& cp);
-		void attack(const std::string& target);
+		virtual void attack(const std::string& target);
 		void my_attack(ClapTrap& target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
@@ -35,11 +35,6 @@ class ClapTrap {
 		size_t getEnergyPoints() const;
 		size_t getAttackDamage() const;
 		void printStatus() const;
-	protected:
-		void setName(std::string new_name);
-		void setHitPoints(size_t amount);
-		void setEnergyPoints(size_t amount);
-		void setAttackDamage(size_t amount);
 };
 
 #endif //CPP03_CLAPTRAP_H

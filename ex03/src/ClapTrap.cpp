@@ -10,17 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.h"
+#include "../includes/ClapTrap.h"
 
 #include <iostream>
 #include <utility>
 
 ClapTrap::ClapTrap(std::string new_name) : m_name(std::move(new_name)) {
-	std::cout << m_name << " is ready!\n";
+	m_hitPoints = 10;
+	m_energyPoints = 10;
+	m_attackDamage = 0;
+	std::cout << "ClapTrap "<<m_name << " is ready!\n";
 }
 
 ClapTrap::~ClapTrap() {
-	std::cout << m_name << " is waste now!\n";
+	std::cout << "ClapTrap "<< m_name << " is waste now!\n";
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &cp) {
@@ -46,7 +49,7 @@ void ClapTrap::takeDamage(unsigned int amount) {
 		return;
 	}
 	if(amount > m_hitPoints) {
-		std::cout<<"You a killer machine!\n";
+		std::cout<<m_name<<" is dead!\n";
 		m_hitPoints = 0;
 		return;
 	}
@@ -100,20 +103,4 @@ size_t ClapTrap::getAttackDamage() const {
 
 void ClapTrap::printStatus() const {
 	std::cout << "Name: " << m_name << "\nHP: " << m_hitPoints << "\nMana: " << m_energyPoints << "\n";
-}
-
-void ClapTrap::setName(std::string new_name) {
-	m_name = std::move(new_name);
-}
-
-void ClapTrap::setHitPoints(size_t amount) {
-	m_hitPoints = amount;
-}
-
-void ClapTrap::setEnergyPoints(size_t amount) {
-	m_energyPoints = amount;
-}
-
-void ClapTrap::setAttackDamage(size_t amount) {
-	m_attackDamage = amount;
 }

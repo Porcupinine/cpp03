@@ -10,20 +10,22 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CPP03_FRAGTRAP_H
-#define CPP03_FRAGTRAP_H
+#ifndef CPP03_SCAVTRAP_H
+#define CPP03_SCAVTRAP_H
 
 #include "ClapTrap.h"
 
-class FragTrap : public ClapTrap {
-private:
+class ScavTrap : virtual public ClapTrap {
+	private:
 
-public:
-	explicit FragTrap(std::string new_name);
-	~FragTrap();
-	FragTrap(FragTrap &cp) = default;
-	FragTrap &operator=(const FragTrap &cp);
-	void highFivesGuys();
+	public:
+		explicit ScavTrap(std::string new_name);
+		~ScavTrap();
+		ScavTrap(ScavTrap& cp) = default;
+		ScavTrap& operator=(const ScavTrap& cp);
+		void guardGate();
+		void attack(const std::string& target);
 };
 
-#endif //CPP03_FRAGTRAP_H
+
+#endif //CPP03_SCAVTRAP_H

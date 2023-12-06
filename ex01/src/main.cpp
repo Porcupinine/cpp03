@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.h"
-#include "FragTrap.h"
+#include "../includes/ClapTrap.h"
+#include "../includes/ScavTrap.h"
 #include <iostream>
 
 int main() {
@@ -19,10 +19,10 @@ int main() {
 	ClapTrap c2("Thyme");
 	ClapTrap c3("Basil");
 	ClapTrap c4("Rosemary");
-	FragTrap f1("Cumin");
-	FragTrap f2("Mint");
-	FragTrap f3("Dill");
-	FragTrap f4("Oregano");
+	ScavTrap s1("Cumin");
+	ScavTrap s2("Mint");
+	ScavTrap s3("Dill");
+	ScavTrap s4("Oregano");
 
 	std::cout<<"\n\nSubject Clap round!\n          3..2..1..FIGHT!           \n";
 	c1.attack(c2.getName());
@@ -40,46 +40,49 @@ int main() {
 	c3.printStatus();
 	c4.printStatus();
 
-	std::cout<<"\n\nSubject Frag round!\n          3..2..1..FIGHT!           \n";
-	f1.attack(f2.getName());
-	f2.takeDamage(f1.getAttackDamage());
-	f1.printStatus();
-	f2.printStatus();
-	f2.attack(f1.getName());
-	f1.beRepaired(f1.getAttackDamage());
-	f1.printStatus();
-	f2.printStatus();
+	std::cout<<"\n\nSubject Scav round!\n          3..2..1..FIGHT!           \n";
+	s1.attack(s2.getName());
+	s2.takeDamage(s1.getAttackDamage());
+	s1.printStatus();
+	s2.printStatus();
+	s2.attack(s1.getName());
+	s1.beRepaired(s1.getAttackDamage());
+	s1.printStatus();
+	s2.printStatus();
+	s1.attack(s2.getName());
+	s2.takeDamage(s1.getAttackDamage());
+	s1.printStatus();
+	s2.printStatus();
+	s1.attack(s2.getName());
+	s2.takeDamage(s1.getAttackDamage());
+	s1.printStatus();
+	s2.printStatus();
+	s1.attack(s2.getName());
+	s2.takeDamage(s1.getAttackDamage());
+	s1.printStatus();
+	s2.printStatus();
+	s1.attack(s2.getName());
+	s2.takeDamage(s1.getAttackDamage());
+	s1.printStatus();
+	s2.printStatus();
+	s1.attack(s2.getName());
+	s2.takeDamage(s1.getAttackDamage());
+	s1.printStatus();
+	s2.printStatus();
+	s1.guardGate();
+	s2.guardGate();
+	s1.printStatus();
+	s2.printStatus();
 
-	std::cout<<"\n\nMy Frag round!\n               3...2...1...FIGHT!\n";
-	f3.my_attack(f4);
-	f4.my_attack(f3);
-	f3.printStatus();
-	f4.printStatus();
-	f3.my_attack(f4);
-	f4.my_attack(f3);
-	f3.printStatus();
-	f4.printStatus();
-	f3.my_attack(f4);
-	f4.my_attack(f3);
-	f3.printStatus();
-	f4.printStatus();
-	f3.my_attack(f4);
-	f4.my_attack(f3);
-	f3.printStatus();
-	f4.printStatus();
-	f3.my_attack(f4);
-	f4.my_attack(f3);
-	f3.printStatus();
-	f4.printStatus();
-	f3.my_attack(f4);
-	f4.my_attack(f3);
-	f3.printStatus();
-	f4.printStatus();
-	f3.my_attack(f4);
-	f4.my_attack(f3);
-	f3.printStatus();
-	f4.printStatus();
-	f3.highFivesGuys();
-
+	std::cout<<"\n\nMy Scav round!\n               3...2...1...FIGHT!\n";
+	s3.my_attack(s4);
+	s4.my_attack(s3);
+	s3.printStatus();
+	s4.printStatus();
+	s3.my_attack(s4);
+	s4.my_attack(s3);
+	s3.printStatus();
+	s4.printStatus();
+	s3.guardGate();
 	std::cout<<"\n\n";
 }

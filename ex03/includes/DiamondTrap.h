@@ -17,14 +17,15 @@
 #include "ScavTrap.h"
 
 class DiamondTrap : public FragTrap, public ScavTrap {
-private:
-	std::string m_name;
-public:
-	DiamondTrap(std::string new_name);
-	~DiamondTrap();
-	DiamondTrap(DiamondTrap& cp) = default;
-	DiamondTrap& operator=(const DiamondTrap& cp) = default;
-
+	private:
+		std::string m_name;
+	public:
+		explicit DiamondTrap(const std::string& new_name);
+		virtual ~DiamondTrap();
+		DiamondTrap(DiamondTrap& cp) = default;
+		DiamondTrap& operator=(const DiamondTrap& cp) = default;
+		void attack(const std::string &target);
+		void whoAmI();
 };
 
 

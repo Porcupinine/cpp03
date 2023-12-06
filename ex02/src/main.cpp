@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.h"
-#include "FragTrap.h"
+#include "../includes/ClapTrap.h"
+#include "../includes/FragTrap.h"
 #include <iostream>
 
 int main() {
@@ -49,6 +49,28 @@ int main() {
 	f1.beRepaired(f1.getAttackDamage());
 	f1.printStatus();
 	f2.printStatus();
+	f1.attack(f2.getName());
+	f2.takeDamage(f1.getAttackDamage());
+	f1.printStatus();
+	f2.printStatus();
+	f1.attack(f2.getName());
+	f2.takeDamage(f1.getAttackDamage());
+	f1.printStatus();
+	f2.printStatus();
+	f1.attack(f2.getName());
+	f2.takeDamage(f1.getAttackDamage());
+	f1.printStatus();
+	f2.printStatus();
+	f1.attack(f2.getName());
+	f2.takeDamage(f1.getAttackDamage());
+	f1.printStatus();
+	f2.printStatus();
+	f1.attack(f2.getName());
+	f2.takeDamage(f1.getAttackDamage());
+	f1.printStatus();
+	f2.printStatus();
+	f1.highFivesGuys();
+	f2.highFivesGuys();
 
 	std::cout<<"\n\nMy Frag round!\n               3...2...1...FIGHT!\n";
 	f3.my_attack(f4);
@@ -59,27 +81,7 @@ int main() {
 	f4.my_attack(f3);
 	f3.printStatus();
 	f4.printStatus();
-	f3.my_attack(f4);
-	f4.my_attack(f3);
-	f3.printStatus();
-	f4.printStatus();
-	f3.my_attack(f4);
-	f4.my_attack(f3);
-	f3.printStatus();
-	f4.printStatus();
-	f3.my_attack(f4);
-	f4.my_attack(f3);
-	f3.printStatus();
-	f4.printStatus();
-	f3.my_attack(f4);
-	f4.my_attack(f3);
-	f3.printStatus();
-	f4.printStatus();
-	f3.my_attack(f4);
-	f4.my_attack(f3);
-	f3.printStatus();
-	f4.printStatus();
-	f3.highFivesGuys();
+
 
 	std::cout<<"\n\n";
 }

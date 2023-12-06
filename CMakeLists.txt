@@ -9,19 +9,19 @@ add_executable(ex00
 		ex00/main.cpp)
 
 add_executable(ex01
-		ex01/ClapTrap.cpp
-		ex01/main.cpp
-		ex01/ScavTrap.cpp)
+		ex01/src/ClapTrap.cpp
+		ex01/src/main.cpp
+		ex01/src/ScavTrap.cpp)
 
 add_executable(ex02
-		ex02/main.cpp
-		ex02/ClapTrap.cpp
-		ex02/FragTrap.cpp)
+		ex02/src/main.cpp
+		ex02/src/ClapTrap.cpp
+		ex02/src/FragTrap.cpp)
 
 add_executable(ex03
-		ex03/ClapTrap.cpp
-		ex03/FragTrap.cpp
-		ex03/main.cpp
-		ex03/ScavTrap.cpp
-		ex03/DiamondTrap.cpp
-		ex03/DiamondTrap.h)
+		ex03/src/ClapTrap.cpp
+		ex03/src/FragTrap.cpp
+		ex03/src/main.cpp
+		ex03/src/ScavTrap.cpp
+		ex03/src/DiamondTrap.cpp
+		ex03/includes/DiamondTrap.h)
