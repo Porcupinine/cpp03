@@ -26,7 +26,17 @@ ScavTrap::~ScavTrap() {
 }
 
 ScavTrap &ScavTrap::operator=(const ScavTrap &cp) {
+	m_hitPoints = cp.m_hitPoints;
+	m_name = cp.m_name;
+	m_energyPoints = cp.m_energyPoints;
+	m_attackDamage = cp.m_attackDamage;
 	return *this;
+}
+
+ScavTrap::ScavTrap(ScavTrap& cp) : ClapTrap(cp.m_name) {
+	m_hitPoints = cp.m_hitPoints;
+	m_energyPoints = cp.m_energyPoints;
+	m_attackDamage = cp.m_attackDamage;
 }
 
 void ScavTrap::guardGate() {

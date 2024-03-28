@@ -24,7 +24,7 @@ class ClapTrap {
 	public:
 		explicit ClapTrap(std::string new_name);
 		~ClapTrap();
-		ClapTrap(ClapTrap& cp) = default;
+		ClapTrap(ClapTrap& cp);
 		ClapTrap& operator=(const ClapTrap& cp);
 		virtual void attack(const std::string& target);
 		void my_attack(ClapTrap& target);
